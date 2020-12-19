@@ -1,0 +1,12 @@
+,Question,Relation
+0,How to use interface to communicate between two activities,"[[use]-->interface[to communicate], [to communicate]-->between two activities[]]"
+1,How to set rate limit for each user in Spring Boot?,"[[]-->rate limit[for, in], [for]-->user[], [in]-->Spring Boot[]]"
+2,How to insert multiple documents at once in MongoDB through Java,"[[insert]-->multiple Document[through, at], [through]-->Java[], [at]-->once[]]"
+3,How to replace HashMap Values while iterating over them in Java,[]
+4,How to read pdf file and write it to outputStream,"[[read]-->pdf File[write], [write]-->it[]]"
+5,How to find the index of an element in a TreeSet?,"[[find]-->index[of, in], [of]-->Element[], [in]-->TreeSet[]]"
+6,How to sort recyclerview by lowest number / String Android Studio,[]
+7,How to view the SQL queries issued by JPA?,[]
+8,How to load a class by classname string from OSGi runtime environment?,"[[load]-->Class[by, from], [by]-->Classname String[], [from]-->RunTime Environment[]]"
+9,How to use interface to communicate activities,"[[use]-->interface[to communicate], [to communicate]-->activities[]]"
+10,Sorting using Comparator Interface and java  8 Streams,"[[]-->using[Sorting], [Sorting]-->Comparator Interface[], [Sorting]-->8 Streams[]]"

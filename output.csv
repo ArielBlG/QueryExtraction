@@ -1,0 +1,26 @@
+,Question,Entities,Nouns,Compound
+0,How to read multiple integer values from one line in Java using BufferedReader object?,"['read', 'values', 'from', 'one', 'Line', 'Java', 'Object']","[Integer, values, Line, Java, BufferedReader, Object]","[[Integer, values], [BufferedReader, Object]]"
+1,How to sort a hashmap by the Integer Value,"['sort', 'HashMap', 'value']","[HashMap, Integer, value]","[[Integer, value]]"
+2,Insert Data into mySQL table with java,"['insert', 'Data', 'with']","[Data, mySQL, table, java]",[]
+3,Sort List in reverse in order,"['List', 'reverse', 'order']","[List, reverse, order]","[[sort, List]]"
+4,Counting nodes in a tree in Java,"['counting', 'Java']","[nodes, tree, Java]",[]
+5,How do i implement a Hashtable using a Binary Search Tree,"['Hashtable', 'search']","[Binary, search, Tree]","[[search, Tree]]"
+6,Java creating a HeapPriorityQueue using binary heap to implement PriorityQueue,['PriorityQueue'],"[Java, HeapPriorityQueue, heap, PriorityQueue]",[]
+7,Min Heap implementation using Array in java,"['min', 'Array']","[Heap, implementation, Array, java]","[[Heap, implementation]]"
+8,Use a linked list to implement a Priority Queue,"['LinkedList', 'Queue']","[LinkedList, Priority, Queue]",[]
+9,bubble sort implementation on linked list,"['sort', 'on', 'LinkedList']","[bubble, sort, implementation, LinkedList]","[[sort, implementation]]"
+10,implementing kruskals algorithm in java,[],"[kruskals, algorithm, java]","[[kruskals, algorithm]]"
+11,how to draw a tree representing a graph of connected Node,"['draw', 'connect', 'Node']","[tree, graph, connect, Node]",[]
+12,finding the shortest distance between two nodes,"['distance', 'between', 'two']","[distance, nodes]",[]
+13,Convert xml to json with Java,"['convert', 'with']","[xml, Java]",[]
+14,java sort array list using bubble sort,"['sort', 'ArrayList']","[sort, ArrayList, bubble, sort]","[[java, sort], [bubble, sort]]"
+15,Java Array sort: Quick way to get a sorted list of indices of an array,"['Array', 'sort', 'Quick', 'get', 'List', 'sorted']","[Java, Array, sort, way, List, indices, Array]","[[Array, sort]]"
+16,"Java: how to convert a List<?> to a Map<String,?>","['convert', 'List', 'String', 'Map']","[Java, List, Map, String]",[]
+17,Implementation of k-means clustering algorithm,[],"[Implementation, k, means, clustering, algorithm]","[[k, means]]"
+18,Java String Bubble Sorting,['String'],"[Java, String, Bubble, Sorting]","[[Bubble, Sorting]]"
+19,Sorting using Comparator Interface and java 8 Streams,"['Comparator', 'and']","[Comparator, Interface, java, Streams]","[[Comparator, Interface]]"
+20,Using gson to deserialize specific JSON field of an object,"['deserialize', 'Field', 'Object']","[gson, JSON, Field, Object]","[[JSON, Field]]"
+21,How to put FloatingActionButton to Fragment?,"['put', 'Fragment']","[FloatingActionButton, Fragment]",[]
+22,java: convert binary string to int,"['convert', 'String']","[binary, String]","[[binary, String]]"
+23,Counting the nodes in a binary search tree,"['counting', 'search']","[nodes, search, tree]","[[search, tree]]"
+24,How to read from user's input in Java and write it to a file,"['read', 'from', 'Java', 'and', 'write', 'File']","[user, input, Java, File]",[]
