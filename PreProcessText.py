@@ -40,6 +40,7 @@ class PreProcessText:
 
     def __init__(self, text):
         self.text_to_preprocess = text
+        self.special_words = ["is", "get", "adjust", "Int", "Void", "Class"]
 
     def self_written_preprocess_rules(self):
         """handle list typo"""
@@ -76,7 +77,7 @@ class PreProcessText:
         matches_df = matches_df.loc[matches_df['similarity'] >= 0.85]
         for index, row in matches_df.iterrows():
             if row["wrong_word"] != row["right_word"]:
-                if "get" in row["right_word"]:
+                if self.word_filter(row["right_word"]):
                     if row["similarity"] > 0.95:
                         self.text_to_preprocess = self.text_to_preprocess.replace(row["wrong_word"], row["right_word"])
                 else:
@@ -84,14 +85,17 @@ class PreProcessText:
 
         return self.self_written_preprocess_rules()
 
+    def word_filter(self, row):
+        return any(x in row for x in self.special_words)
+
     def remove_unneeded_text(self):
         self.text_to_preprocess = self.text_to_preprocess.replace("java.util", "")
-        text = self.text_to_preprocess .split(' ', 1)
+        text = self.text_to_preprocess.split(' ', 1)
         if text[0].lower() == 'java':
             self.text_to_preprocess = text[1]
         else:
             self.text_to_preprocess = text[0] + ' ' + text[1]
-        text = self.text_to_preprocess .split(' ', 2)
+        text = self.text_to_preprocess.split(' ', 2)
         how_to_text = text[0].lower() + ' ' + text[1].lower()
         if how_to_text == 'how to':
             self.text_to_preprocess = text[2]

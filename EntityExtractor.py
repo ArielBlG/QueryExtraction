@@ -129,7 +129,7 @@ class EntityExtractor:
                 second_vertex = Vertex(token.head)
                 self.dep_graph.insert(second_vertex)
             self.dep_graph.new_edge(first_vertex, second_vertex, token.dep_)
-        print("***** Relationships *****")
+        # print("***** Relationships *****")
 
     def get_comp_nouns_from_text(self):
         """

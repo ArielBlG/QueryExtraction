@@ -13,10 +13,9 @@ import PreProcessText
 import RelationshipExtractor
 from TextQueries import *
 import csv
+import neuralcoref
+
 nlp = spacy.load('en_core_web_sm')
-
-# import neuralcoref
-
 # coref = neuralcoref.NeuralCoref(nlp.vocab)
 # nlp.add_pipe(coref, name='neuralcoref')
 
@@ -94,14 +93,16 @@ def Main():
     entities_list = []
     new_queries = read_new_queries()
     for text in new_queries:
-        # if text != "How to use interface to communicate between two activities":
-        #     continue
+        if text != "How to add action listener that listens to multiple buttons":
+            continue
         index = index + 1
         pre_process_init = PreProcessText.PreProcessText(text)
         text_after_preprocess = pre_process_init.preprocess_text(df_clean)
         print("########################################################")
         print(text_after_preprocess)
         doc = nlp(text_after_preprocess)
+        # print(doc._.has_coref)  # fix coref
+        # print(doc._.coref_clusters)
         entity_extractor = EntityExtractor.EntityExtractor(text, newDepGraph.Graph(), doc.ents, doc)
         entity_extractor.init_extraction()
         # print(entity_extractor.entity_after_filter)

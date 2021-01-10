@@ -68,11 +68,18 @@ class Graph:
     def insert(self, vertex):
         self.vertexs.append(vertex)
 
-    def get_vertex(self, vertex):
+    def get_vertex(self, vertex, optional=None):
         for v in self.vertexs:
-            if v.token == vertex:
-                return v
+            if type(v.token) == type(vertex):
+                if v.token == vertex:
+                    return v
         return None
+
+    def get_vertex_by_token(self, vertex, optional=None):
+        for v in self.vertexs:
+            if v == vertex:
+                return v
+        return optional
 
     def new_edge(self, first_vertex, second_vertex, dependency):
         first_vertex.add_edge(Edge(second_vertex, dependency))

@@ -40,6 +40,14 @@ def is_adp(token):
     return token.pos_ == "ADP"
 
 
+def is_adv(token):
+    return token.pos_ == "ADV"
+
+
+def is_conj(token):
+    return token.pos_ == "CCONJ"
+
+
 def is_part(token):
     return token.pos_ == "PART"
 
@@ -112,5 +120,3 @@ def get_compound_nouns(story, span):
         compounds = compounds[0]
 
     return compounds
-
-

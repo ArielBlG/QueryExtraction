@@ -1,6 +1,8 @@
 from nltk.corpus import stopwords
 import spacy
 
+from SpaCyUtils import is_verb
+
 stopwords = stopwords.words('english')
 
 
@@ -48,6 +50,7 @@ class AttributeExtractor:
         self.Rule_1("amod")
         self.Rule_1("nummod")
         self.Rule_1("nmod")
+        self.Rule_AND()
         # print(self._attributes)
 
     def Rule_1(self, dependency):
@@ -67,9 +70,26 @@ class AttributeExtractor:
                                     self.entity_dict[edge.target.token.text] = self.entity_dict[vertex.token.text]
                                 # print(self.entity_dict[vertex.token.text].text)
 
+    def Rule_AND(self):
+        for vertex in self.dep_graph:
+            if vertex.token.text in self.entity_dict:
+                first_edge = vertex.get_edge_by_dep("cc")
+                for edge in first_edge:
+                    connected_vertex = edge.target
+                    second_edge = vertex.get_edge_by_dep("conj")
+                    for scnd_edge in second_edge:
+                        if scnd_edge:
+                            if scnd_edge.target.token.text not in self.entity_dict and is_verb(scnd_edge.target.token.text):
+                                continue
+                            first_token = self.entity_dict.get(vertex.token.text)
+                            second_token = self.entity_dict.get(scnd_edge.target.token.text)
+                            self.entity_dict[vertex.token.text] = self.get_span(first_token, second_token)
+                            if edge.target.token.text in self.entity_dict:
+                                self.entity_dict[edge.target.token.text] = self.entity_dict[vertex.token.text]
+
     def get_current_token(self, comp_list, vertex_token):
         for comp in comp_list:
-            if self._doc[vertex_token.i:vertex_token.i+1] == comp:
+            if self._doc[vertex_token.i:vertex_token.i + 1] == comp:
                 return comp
 
     def get_span(self, entity, comp=None, vertex_token=None):
@@ -81,7 +101,12 @@ class AttributeExtractor:
         """
         if isinstance(comp, list):
             comp = self.get_current_token(comp, vertex_token)
-        if isinstance(comp, spacy.tokens.span.Span):
+        if isinstance(comp, spacy.tokens.span.Span) and isinstance(entity, spacy.tokens.span.Span):
+            if entity.start < comp.end:
+                return self._doc[entity.start: comp.end]
+            else:
+                return self._doc[comp.end - 1: entity.start + 1]
+        elif isinstance(comp, spacy.tokens.span.Span):
             if entity.i < comp.end:
                 return self._doc[entity.i: comp.end]
             else:
